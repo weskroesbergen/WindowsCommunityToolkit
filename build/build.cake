@@ -164,6 +164,8 @@ Task("Build")
     }
     .SetConfiguration("Release")
     .WithTarget("Build")
+	.WithProperty("IncludeSymbols", "true")
+	.WithProperty("SymbolPackageFormat", "snupkg")
     .WithProperty("GenerateLibraryLayout", "true");
 
 	MSBuild(Solution, buildSettings);
@@ -210,6 +212,8 @@ Task("Package")
     .SetConfiguration("Release")
     .WithTarget("Pack")
     .WithProperty("GenerateLibraryLayout", "true")
+	.WithProperty("IncludeSymbols", "true")
+	.WithProperty("SymbolPackageFormat", "snupkg")
 	.WithProperty("PackageOutputPath", nupkgDir);
 
     MSBuild(Solution, buildSettings);
