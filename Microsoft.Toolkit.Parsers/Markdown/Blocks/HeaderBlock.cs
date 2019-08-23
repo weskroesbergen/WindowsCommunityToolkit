@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Microsoft.Toolkit.Parsers.Markdown.Helpers;
 using Microsoft.Toolkit.Parsers.Markdown.Inlines;
 
@@ -160,7 +161,9 @@ namespace Microsoft.Toolkit.Parsers.Markdown.Blocks
                 return base.ToString();
             }
 
-            return string.Join(string.Empty, Inlines);
+            string headerPrefix = new StringBuilder().Append('#', HeaderLevel).ToString();
+            
+            return "\n" + headerPrefix + " " + string.Join(string.Empty, Inlines) + "\n";
         }
     }
 }

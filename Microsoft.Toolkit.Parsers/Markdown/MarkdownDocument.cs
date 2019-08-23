@@ -412,7 +412,7 @@ namespace Microsoft.Toolkit.Parsers.Markdown
                 return base.ToString();
             }
 
-            return string.Join("\r\n", Blocks);
+            return string.Join("\n", Blocks);
         }
     }
 }

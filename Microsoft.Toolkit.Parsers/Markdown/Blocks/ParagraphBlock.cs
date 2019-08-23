@@ -49,7 +49,7 @@ namespace Microsoft.Toolkit.Parsers.Markdown.Blocks
                 return base.ToString();
             }
 
-            return string.Join(string.Empty, Inlines);
+            return string.Join(string.Empty, Inlines) + "\n";
         }
     }
 }
